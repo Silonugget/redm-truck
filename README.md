@@ -2,7 +2,7 @@
 
 ## About
 
-The RedM Truck is a port of an asset from Polks Car packs originally for FiveM. 
+RedM Truck is the port of a truck model from Ploks FiveM Car pack, along with script to make it functional.
 
 ## Key Features
 
