@@ -13,7 +13,9 @@ RedM Truck is the port of a truck model from Ploks FiveM Car pack, along with sc
 ## Important
 - To prevent visibility de-sync between players - Player is teleported to Mexico then placed back if they leave truck and re-enter driver seat
 - To prevent visibility de-sync for vehicle - The entire vehicle/horse becomes visible if vehicle touches water
-- To prevent visibility de-sync for vehicle - it will explode if someone other than the player tries to sit in their drivers seat
+- To prevent visibility de-sync for vehicle - Truck will explode if someone other than the player tries to sit in their drivers seat
+- Front and rear lights will display only at night when the engine is on
+- Light and exhaust smoke visibiliy is not yet synchronized between other players however functional for the player that spawns the truck
 
 ## Installation
 
@@ -29,15 +31,15 @@ Change select commands such as spawn command in the config.lua file
 | `/spawn_truck` | Spawns the truck next to player |
 | `/delete_truck` | Deletes truck |
 | `/reset_truck` | Resets truck |
-| `/fixme` | Manual fix for player visibility de-sync - Teleports player to Mexico and back |
-| `/fixtruck` | Manual fix for object visibility de-sync - Toggles truck visibility |
-| `/waterfix` | Manual fix for water visibility de-sync - Makes everything visible |
-| `/lock` | Preliminary idea for locking - makes vehicle undriveable (wheels are likely to fall off/cannot be unlocked) |
+| `/fixme` | Manual toggle for player visibility de-sync - Teleports player to Mexico and back |
+| `/fixtruck` | Manual toggle for object visibility de-sync - Toggles truck visibility |
+| `/waterfix` | Manual toggle for water visibility de-sync - Makes everything visible |
+| `/lock` | Preliminary idea for locking - Makes vehicle undriveable (wheels are likely to fall off/cannot be unlocked) |
 
 # controls
 
-Turn Engine on/off = Left Alt
-Rev = R
+Turn Engine on/off = Left Alt, 
+   Rev = R
 
 
 ## Screenshots
@@ -51,5 +53,5 @@ Rev = R
 ## Credits
 - PLOKMJNB for car models https://github.com/PLOKMJNB/FiveM-Civ-Car-Pack/tree/master
 - Zelbeus for Script elements https://github.com/zelbeus/redm_car
-- Kibook for PMMS resource 
+- Kibook for PMMS resource https://github.com/kibook/pmms
 - Thanks to Luman Studios for sharing knowledge that inspired the idea
