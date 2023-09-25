@@ -7,7 +7,7 @@ local function spawnTruck(c, engine)
     if c then 
       pc = c
     end
-    local model, model2, wheelModel = GetHashKey("buggy01"), GetHashKey("f15078"), GetHashKey("f15078wheel") -- change vehicle models here
+    local model, model2, wheelModel = GetHashKey("buggy01"), GetHashKey("f15078"), GetHashKey("f15078wheel") -- Change vehicle models here
     local attach = {-0.01, 2.2, -0.03, 0.0, 0.0, 0.0} 
 
     RequestModel(model)
@@ -18,7 +18,7 @@ local function spawnTruck(c, engine)
       Citizen.Wait(5)
     end
 	
-	-- create vehicle based on hash key, set invisible and attach shell object
+	-- Create vehicle based on hash key, set invisible and attach shell object
     local vehicle = CreateVehicle(model, pc.x + 2.0, pc.y, pc.z, (pc.h or 1.0), 1, 1, 0)
     Citizen.Wait(150)
     FreezeEntityPosition(vehicle, 1)
@@ -192,8 +192,7 @@ local function spawnTruck(c, engine)
       local a = {
         vehicle = vehicle, 
         object = obj,
-        engine = false,
-        
+        engine = false,    
         headlights = false,
         headlight_l = hobj2, 
         headlight_r = hobj3,
@@ -276,7 +275,7 @@ local function fixme()
 
     -- Teleport the player to the new coordinates
     SetEntityCoords(player, -2749.08, -5218.31, -9.63, 0.0, 0.0, 0.0, false)
-    Citizen.Wait(300)  -- Wait for 1.5 seconds to ensure the teleportation is complete
+    Citizen.Wait(300)  -- Wait to ensure the teleportation is complete
 
     -- Teleport the player back to their original coordinates
     SetEntityCoords(player, x, y, z, 0.0, 0.0, 0.0, false)
@@ -362,13 +361,13 @@ Citizen.CreateThread(function()
 
         if distance < 50.0 and not hasRun then		-- Change 50.0 to desired distance
 		Citizen.Wait(9000)
-          toggleObjectVisibility()  -- Run the function
-		  Citizen.Wait(10)  -- Wait for 5 seconds
+          toggleObjectVisibility()  
+		  Citizen.Wait(10)  
 
           toggleObjectVisibility()  -- Run the function the second time
 	  
           hasRun = true  -- Set the flag to true
-          Citizen.Wait(10000)  -- Wait for 100 seconds before the next cycle
+          Citizen.Wait(10000)  
           hasRun = false  -- Reset the flag
         end
       end
@@ -567,7 +566,7 @@ RegisterCommand(Config.DeleteCommand, function(_, args)
 	  end
   end)
 --------------------------------------------------------------------------------------------------------------------------------------------
---- Engine start and stop function on key press - key in config default is ALT
+--- Engine start and stop function on key press - config default is ALT
 
 Citizen.CreateThread(function()
     Citizen.Wait(1000)
