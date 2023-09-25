@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMapTypes>
+  <extensions />
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <guid value="0"/>
+      <lodDist value="50.00000000"/>
+      <flags value="537001984" />
+      <loadFlags value="537001984" />
+      <specialAttribute value="0" />
+      <bbMin x="-0.1644373" y="-0.41698176" z="-0.41698176" />
+      <bbMax x="0.16513097" y="0.41698176" z="0.41698176" />
+      <bsCentre x="0.00034683943" y="0.0" z="0.0" />
+      <bsRadius value="0.61229193" />
+      <hdTextureDist value="60.0"/>
+      <name>f15078wheel</name>
+      <textureDictionary>f15078</textureDictionary>
+      <physicsDictionary>f15078wheel</physicsDictionary>
+      <clipDictionary />
+      <drawableDictionary />
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>f15078wheel</assetName>
+      <extensions />
+      <redm_loves_you_a68fd88a5afa0b22 />
+    </Item>
+  </archetypes>
+  <name>f15078wheel_ytyp</name>
+  <dependencies />
+  <compositeEntityTypes itemType="CCompositeEntityType" />
+</CMapTypes>
