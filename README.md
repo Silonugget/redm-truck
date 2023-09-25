@@ -22,7 +22,7 @@ RedM Truck is the port of a truck model from Ploks FiveM Car pack, along with sc
 
 ![screen3](https://github.com/Silonugget/redm-truck/assets/107784929/ff2c9950-ab95-46b5-9e8a-7781a19477f1)
 
-See Demo Video - Silonugget.com
+!(Demo Video)[https://silonugget.com]
 
 ## Credits
 - PLOKMJNB for car models https://github.com/PLOKMJNB/FiveM-Civ-Car-Pack/tree/master
