@@ -17,7 +17,7 @@ The RedM Truck is a port of an asset from Polks Car packs originally for FiveM.
 3. Ensure pmms and redm-truck
 
 ## Screenshots
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/tYt1R7J" data-context="false" ><a href="//imgur.com/a/tYt1R7J"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![image](https://imgur.com/a/tYt1R7J)
 
 ## Credits
 Script elements from zelbeus https://github.com/zelbeus/redm_car
