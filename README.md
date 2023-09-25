@@ -18,8 +18,6 @@ The RedM Truck is a port of an asset from Polks Car packs originally for FiveM.
 
 ## Screenshots
 
-![screen1](https://github.com/Silonugget/redm-truck/assets/107784929/532c734f-8e44-45da-b638-0f92f8f00dc4)
-
 ![screen2](https://github.com/Silonugget/redm-truck/assets/107784929/47ca92c6-ead6-4e62-af09-71ce80295afb)
 
 ![screen3](https://github.com/Silonugget/redm-truck/assets/107784929/ff2c9950-ab95-46b5-9e8a-7781a19477f1)
