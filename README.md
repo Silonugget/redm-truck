@@ -25,6 +25,7 @@ The RedM Truck is a port of an asset from Polks Car packs originally for FiveM.
 See Demo Video - Silonugget.com
 
 ## Credits
-Script elements from zelbeus https://github.com/zelbeus/redm_car
-Kibook for PMMS resource 
-Thanks to Luman Studios for sharing knowledge that inspired the idea
+- PLOKMJNB for car models https://github.com/PLOKMJNB/FiveM-Civ-Car-Pack/tree/master
+- zelbeus for Script elements https://github.com/zelbeus/redm_car
+- Kibook for PMMS resource 
+- Thanks to Luman Studios for sharing knowledge that inspired the idea
