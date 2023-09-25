@@ -2,7 +2,7 @@ local truck = nil
 
 local function spawnTruck(c, engine)
     ExecuteCommand(Config.DeleteCommand)
-	Wait(10)
+	Citizen.Wait(10)
     local pc = GetEntityCoords(PlayerPedId())
     if c then 
       pc = c
@@ -20,12 +20,12 @@ local function spawnTruck(c, engine)
 	
 	-- create vehicle based on hash key, set invisible and attach shell object
     local vehicle = CreateVehicle(model, pc.x + 2.0, pc.y, pc.z, (pc.h or 1.0), 1, 1, 0)
-    Wait(150)
+    Citizen.Wait(150)
     FreezeEntityPosition(vehicle, 1)
     SetEntityVisible(vehicle, 0)
-    Wait(150)
+    Citizen.Wait(150)
     local obj = CreateObject(model2, pc.x, pc.y, pc.z, 1, 1, 1)
-    Wait(300)
+    Citizen.Wait(300)
     AttachEntityToEntity(obj, vehicle, 0, attach[1], attach[2], attach[3], attach[4], attach[5], attach[6], 0, 1, 1, 0, 0, 2)
 
    -- Initialization for rear wheels
@@ -187,7 +187,7 @@ local function spawnTruck(c, engine)
 
   -- Attach the exhaust object to the vehicle
   AttachEntityToEntity(exhaust, vehicle, 0, exhaustOffset.x, exhaustOffset.y, exhaustOffset.z, 0.0, 0.0, 0.0, 0, 1, 0, 0, 0, 2)
-      Wait(50)
+      Citizen.Wait(50)
 
       local a = {
         vehicle = vehicle, 
@@ -207,14 +207,14 @@ local function spawnTruck(c, engine)
         exhaust = exhaust
       }
       
-      Wait(50)
+      Citizen.Wait(50)
       truck = a
       
     FreezeEntityPosition(vehicle, 0)
     SetModelAsNoLongerNeeded(model)
     SetModelAsNoLongerNeeded(model2)
     SetModelAsNoLongerNeeded(wheelModel)
-	Wait(1)
+	Citizen.Wait(1)
 	SetVehicleLights(vehicle, 1)
 	
 	     -- initialize lights and attach
@@ -224,7 +224,7 @@ local function spawnTruck(c, engine)
           Citizen.Wait(5)
         end
         hobj, hobj2, hobj3 = CreateObject(GetHashKey("p_stageshelllight_red01x"), pc.x, pc.y, pc.z - 3.0, 1, 1, 1), CreateObject(model3, pc.x, pc.y, pc.z - 2.0, 1, 1, 1), CreateObject(model3, pc.x, pc.y, pc.z, 1, 1, 1)
-		        Wait(100)
+		        Citizen.Wait(100)
 				
   local attaches = {
   [1] = {-0.5, -3.0, -1.2, -40.0, 0.0, (90.0 + 90) % 360, "Back"},
@@ -232,7 +232,7 @@ local function spawnTruck(c, engine)
   [3] = {0.8, 1.9, 0.5, -0.0, 0.0, (270.0 + 90) % 360, "Front Right"},
   }
 
-        Wait(100)
+        Citizen.Wait(100)
         AttachEntityToEntity(hobj, obj, 0, attaches[1][1], attaches[1][2], attaches[1][3], attaches[1][4], attaches[1][5], attaches[1][6], 0, 0, 0, 0, 0, 2)
         AttachEntityToEntity(hobj2, obj, 0, attaches[2][1], attaches[2][2], attaches[2][3], attaches[2][4], attaches[2][5], attaches[2][6], 0, 0, 0, 0, 0, 2)
         AttachEntityToEntity(hobj3, obj, 0, attaches[3][1], attaches[3][2], attaches[3][3], attaches[3][4], attaches[3][5], attaches[3][6], 0, 0, 0, 0, 0, 2)
@@ -302,9 +302,9 @@ Citizen.CreateThread(function()
             enterVehicleCounter = enterVehicleCounter + 1  -- Increment the counter
 
             if enterVehicleCounter > 1 then  -- If player has entered more than once
-                Wait(100)
+                Citizen.Wait(100)
                 fixme()  -- Call the fixme function
-                Wait(1500)
+                Citizen.Wait(1500)
                 spawnTruck(c, engine) 
             end
         end
@@ -361,7 +361,7 @@ Citizen.CreateThread(function()
         local distance = Vdist(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z, otherPlayerCoords.x, otherPlayerCoords.y, otherPlayerCoords.z)
 
         if distance < 50.0 and not hasRun then		-- Change 50.0 to desired distance
-		Wait(9000)
+		Citizen.Wait(9000)
           toggleObjectVisibility()  -- Run the function
 		  Citizen.Wait(10)  -- Wait for 5 seconds
 
@@ -463,7 +463,7 @@ Citizen.CreateThread(function()
 
     if DoesEntityExist(vehicle) and vehicle == truck.vehicle and not DoesEntityExist(clonePed) then
       Citizen.CreateThread(function()
-        Wait(2)
+        Citizen.Wait(2)
         SetEntityVisible(player, false, false)
       end)
 
@@ -505,7 +505,7 @@ Citizen.CreateThread(function()
 
       -- Start another thread to handle clone visibility with a delay
       Citizen.CreateThread(function()
-          Wait(700)
+          Citizen.Wait(700)
           SetEntityVisible(clonePed, true, false)
       end)
     elseif (not DoesEntityExist(vehicle) or vehicle ~= truck.vehicle) and DoesEntityExist(clonePed) then
@@ -547,7 +547,7 @@ RegisterCommand(Config.DeleteCommand, function(_, args)
 	  DeleteEntity(hobj3)
 	  DeleteEntity(truck.exhaust)
 	  TriggerServerEvent('stopEngineAudio', primaryAudioNetId, secondaryAudioNetId)
-	  Wait(69)
+	  Citizen.Wait(69)
         DeleteEntity(truck.primaryAudio)
         DeleteEntity(truck.secondaryAudio)
       -- Delete the front wheels
@@ -570,9 +570,9 @@ RegisterCommand(Config.DeleteCommand, function(_, args)
 --- Engine start and stop function on key press - key in config default is ALT
 
 Citizen.CreateThread(function()
-    Wait(1000)
+    Citizen.Wait(1000)
     while true do
-        Wait(10)
+        Citizen.Wait(10)
         
         if truck then  
             if truck.intruck then  
@@ -591,11 +591,11 @@ Citizen.CreateThread(function()
                         TriggerServerEvent('startEngineAudio', primaryAudioNetId)                        
                         -- Enable the truck engine
                         SetVehicleEngineOn(vehicleEntity, 1, 1)
-                        -- Wait for the start-up sound to finish (assuming it's around 4 seconds long)
-                        Wait(3800)                        
+                        -- Citizen.Wait for the start-up sound to finish (assuming it's around 4 seconds long)
+                        Citizen.Wait(3800)                        
                         -- Notify the server to start the idle sound on the secondary audio object
                         TriggerServerEvent('startIdleAudio', secondaryAudioNetId)						
-						Wait(1900)
+						Citizen.Wait(1900)
 						TriggerServerEvent('stopEngineAudio', primaryAudioNetId)
 						-- lights						
 								SetEntityVisible(hobj, true)
@@ -613,16 +613,16 @@ Citizen.CreateThread(function()
 		                SetEntityVisible(hobj2, false)
 		                SetEntityVisible(hobj3, false)
 		                 TriggerServerEvent('startStopAudio', primaryAudioNetId)
-		                Wait(2000)
+		                Citizen.Wait(2000)
 		                TriggerServerEvent('stopEngineAudio', primaryAudioNetId, secondaryAudioNetId)
                     end               
                     -- Toggle the engine state
                     truck.engine = not truck.engine					                   
-                    Wait(1200)
+                    Citizen.Wait(1200)
                 end
             end
         else
-            Wait(1000)
+            Citizen.Wait(1000)
         end
     end
 end)
@@ -631,7 +631,7 @@ end)
 
 Citizen.CreateThread(function()
     while true do  
-        Wait(2000)         
+        Citizen.Wait(2000)         
         if truck then  
             local vehicleEntity = truck.vehicle  
             -- Check if the vehicle is drivable
@@ -650,11 +650,11 @@ Citizen.CreateThread(function()
                 SetEntityVisible(hobj, false)
                 SetEntityVisible(hobj2, false)
                 SetEntityVisible(hobj3, false)
-				Wait(200)
+				Citizen.Wait(200)
 
                 -- Notify server to stop other sounds if any
                 TriggerServerEvent('startStopAudio', primaryAudioNetId)
-                Wait(2000)
+                Citizen.Wait(2000)
                 TriggerServerEvent('stopEngineAudio', primaryAudioNetId, secondaryAudioNetId)
 
                 -- Update engine state
@@ -671,7 +671,7 @@ local isAccelAudioPlaying = false
 
 Citizen.CreateThread(function()
     while true do
-        Wait(10)  
+        Citizen.Wait(10)  
         if truck and truck.intruck and truck.engine then  
 
             -- Handle rev audio
@@ -679,7 +679,7 @@ Citizen.CreateThread(function()
                 if not isRevAudioPlaying then  -- Check the flag before starting the audio
                     isRevAudioPlaying = true
                     TriggerServerEvent('startRevAudio', primaryAudioNetId)
-                    Wait(3000)
+                    Citizen.Wait(3000)
                     TriggerServerEvent('stopEngineAudio', primaryAudioNetId)
                     isRevAudioPlaying = false  -- Reset the flag
                 end
@@ -694,9 +694,9 @@ Citizen.CreateThread(function()
             elseif IsControlJustReleased(0, 0x8FFC75D6) then  -- 'Shift' is released
                 TriggerServerEvent('stopEngineAudio', primaryAudioNetId)
                 isAccelAudioPlaying = false  -- Reset the flag
-				Wait(420)
+				Citizen.Wait(420)
 				TriggerServerEvent('startDecelAudio', primaryAudioNetId)
-				Wait(1600)
+				Citizen.Wait(1600)
 				TriggerServerEvent('stopEngineAudio', primaryAudioNetId)
             end
 
@@ -709,7 +709,7 @@ Citizen.CreateThread(function()
                 end
             end
         end  
-        Wait(10)  
+        Citizen.Wait(10)  
     end
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -805,7 +805,7 @@ Citizen.CreateThread(function()
         DrawSprite("hud_textures", "gang_savings", 0.53, 0.91, 0.04, 0.04, 0.1, color2[1], color2[2], color2[3], color2[4], 0)
       end
     else
-      Wait(800)
+      Citizen.Wait(800)
     end
   end
 end)
