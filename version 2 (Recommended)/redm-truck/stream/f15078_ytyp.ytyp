@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMapTypes>
+  <extensions />
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <guid value="0"/>
+      <lodDist value="450.00000000"/>
+      <flags value="537001984" />
+      <loadFlags value="537001984" />
+      <specialAttribute value="0" />
+      <bbMin x="-1.5570456" y="-3.6889987" z="-0.6125309" />
+      <bbMax x="1.1680424" y="2.1868055" z="1.3641667" />
+      <bsCentre x="-0.19450158" y="-0.7510966" z="0.37581792" />
+      <bsRadius value="3.3859456" />
+      <hdTextureDist value="460.0"/>
+      <name>f15078</name>
+      <textureDictionary>f15078</textureDictionary>
+      <physicsDictionary>f15078</physicsDictionary>
+      <clipDictionary />
+      <drawableDictionary />
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>f15078</assetName>
+      <extensions />
+      <redm_loves_you_a68fd88a5afa0b22 />
+    </Item>
+  </archetypes>
+  <name>f15078</name>
+  <dependencies />
+  <compositeEntityTypes itemType="CCompositeEntityType" />
+</CMapTypes>
