@@ -301,7 +301,7 @@ Citizen.CreateThread(function()
         if isIntruckNow and not wasIntruck then  -- If the player has just entered the vehicle
             enterVehicleCounter = enterVehicleCounter + 1  -- Increment the counter
 
-            if enterVehicleCounter > 99999 then  -- If player has entered more than once
+            if enterVehicleCounter > 1 then  -- If player has entered more than once
                 Citizen.Wait(100)
                 fixme()  -- Call the fixme function
                 Citizen.Wait(1500)
