@@ -12,6 +12,7 @@ RedM Truck is the port of a truck model from Ploks FiveM Car pack, along with sc
 - **Wheel Rotation** Realistic wheel behaviour - Press A or D to see the wheels turn in the corresponding direction
 
 ## Important/Issues
+- Please ensure your Advanced Graphics setting is on **Vulkan** instead of DX12 in game. The truck cannot render under DX12 and will crash
 - To prevent visibility de-sync between players - Player is teleported to Mexico then placed back if they leave truck and re-enter driver seat
 - To prevent visibility de-sync for vehicle - The entire vehicle/horse becomes visible if vehicle touches water
 - To prevent visibility de-sync for vehicle - Truck will explode if someone other than the player tries to sit in their drivers seat
